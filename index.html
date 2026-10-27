@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interactive Class 10 Physics simulations and an AI study assistant."
+    />
+    <title>Physics Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="simulations-panel" aria-labelledby="page-title">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true">∿</span>
+          <span>PHYSICS VISUALIZER</span>
+        </div>
+
+        <div class="chapters-view" id="chapters-view">
+          <header class="panel-heading">
+            <p class="eyebrow">NCTB · CLASS 10</p>
+            <h1 id="page-title">Physics,<br />visualized.</h1>
+            <p class="panel-description">
+              Explore every chapter through interactive formulas, experiments, and visual explanations.
+            </p>
+          </header>
+
+          <nav class="simulation-menu" aria-label="Physics chapters">
+          <button class="simulation-option is-selected" type="button" data-chapter="Physical Quantities and Measurement" aria-pressed="true">
+            <span class="option-number">01</span>
+            <span class="option-name">Physical Quantities and Measurement</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Motion" aria-pressed="false">
+            <span class="option-number">02</span>
+            <span class="option-name">Motion</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Force" aria-pressed="false">
+            <span class="option-number">03</span>
+            <span class="option-name">Force</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Work, Power and Energy" aria-pressed="false">
+            <span class="option-number">04</span>
+            <span class="option-name">Work, Power and Energy</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="State of Matter and Pressure" aria-pressed="false">
+            <span class="option-number">05</span>
+            <span class="option-name">State of Matter and Pressure</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Effect of Heat on Matter" aria-pressed="false">
+            <span class="option-number">06</span>
+            <span class="option-name">Effect of Heat on Matter</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Waves and Sound" aria-pressed="false">
+            <span class="option-number">07</span>
+            <span class="option-name">Waves and Sound</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Reflection of Light" aria-pressed="false">
+            <span class="option-number">08</span>
+            <span class="option-name">Reflection of Light</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Refraction of Light" aria-pressed="false">
+            <span class="option-number">09</span>
+            <span class="option-name">Refraction of Light</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Static Electricity" aria-pressed="false">
+            <span class="option-number">10</span>
+            <span class="option-name">Static Electricity</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Current Electricity" aria-pressed="false">
+            <span class="option-number">11</span>
+            <span class="option-name">Current Electricity</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Magnetic Effects of Current" aria-pressed="false">
+            <span class="option-number">12</span>
+            <span class="option-name">Magnetic Effects of Current</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="simulation-option" type="button" data-chapter="Radioactivity and Electronics" aria-pressed="false">
+            <span class="option-number">13</span>
+            <span class="option-name">Radioactivity and Electronics</span>
+            <span class="option-arrow" aria-hidden="true">↗</span>
+          </button>
+          </nav>
+
+          <footer class="panel-footer">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>13 chapters · interactive learning</span>
+          </footer>
+        </div>
+
+        <article class="chapter-page" id="chapter-page" aria-live="polite" hidden>
+          <button class="back-button" id="back-button" type="button">
+            <span aria-hidden="true">←</span>
+            <span>All chapters</span>
+          </button>
+
+          <header class="chapter-page-header">
+            <p class="eyebrow" id="chapter-label">CHAPTER 01</p>
+            <h2 id="chapter-title"></h2>
+            <p class="chapter-summary" id="chapter-summary"></p>
+          </header>
+
+          <div class="points-heading">
+            <p class="eyebrow">IN THIS CHAPTER</p>
+            <span class="points-count" id="points-count"></span>
+          </div>
+          <ol class="points-list" id="points-list"></ol>
+
+          <aside class="visualize-card">
+            <div class="visualize-icon" aria-hidden="true">✦</div>
+            <div>
+              <p class="eyebrow">VISUALIZE IT</p>
+              <p id="visualize-text"></p>
+            </div>
+          </aside>
+        </article>
+      </aside>
+
+      <section class="chat-panel" aria-labelledby="chat-title">
+        <header class="chat-header">
+          <div class="chat-identity">
+            <div class="gemini-icon" aria-hidden="true">
+              <span></span>
+            </div>
+            <div>
+              <h2 id="chat-title">Gemini</h2>
+              <p>Physics study assistant</p>
+            </div>
+          </div>
+          <span class="connection-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Ready to learn
+          </span>
+        </header>
+
+        <div class="chat-body">
+          <div class="chat-welcome">
+            <div class="welcome-spark" aria-hidden="true">✦</div>
+            <p class="eyebrow">YOUR AI STUDY PARTNER</p>
+            <h2>What would you like to understand?</h2>
+            <p>
+              Ask questions, get a formula explained, or use the simulations on the left to learn by doing.
+            </p>
+          </div>
+
+          <div class="suggested-prompts" aria-label="Suggested questions">
+            <button type="button">Explain the pendulum formula</button>
+            <button type="button">What is acceleration?</button>
+            <button type="button">Help me solve a problem</button>
+          </div>
+        </div>
+
+        <footer class="chat-composer">
+          <label class="sr-only" for="chat-input">Message Gemini</label>
+          <input id="chat-input" type="text" placeholder="Ask Gemini about physics..." />
+          <button class="send-button" type="button" aria-label="Send message" title="Gemini connection coming soon">
+            <span aria-hidden="true">↑</span>
+          </button>
+        </footer>
+        <p class="chat-disclaimer">Gemini chat connection will be added later.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
